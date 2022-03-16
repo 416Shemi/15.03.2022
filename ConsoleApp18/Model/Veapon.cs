@@ -12,68 +12,79 @@ namespace ConsoleApp18.Model
         public int NumberBulletsin;
         public int SecondsCombing;
         public string AtisMode;
-        public Veapon(int bulledCapacity, int numberBulletsin, int secondsCombing , string mode)
+        public Veapon(int BulledCapacity, int NumberBulletsin, int SecondsCombing ,string AtisMode)
         {
-            this.BulledCapacity = bulledCapacity ;
-            this.NumberBulletsin = numberBulletsin;
-            this.SecondsCombing = secondsCombing;
-            this.AtisMode = mode;
+            this.BulledCapacity = BulledCapacity ;
+            this.NumberBulletsin = NumberBulletsin;
+            this.SecondsCombing = SecondsCombing;
+            this.AtisMode = AtisMode;
         }
-        public void Shoot(int n)
+        public void Shoot( int numberBulletsin)
         {
-            if(n  > 0)
+            if( numberBulletsin > 0)
             {
-                n = n - 1;
+                numberBulletsin -- ;
+                Console.WriteLine("A projectile was fired");
             }
             else
             {
-                Console.WriteLine("Mermi yoxdur");
+                Console.WriteLine("There are no shells");
             }
         }
-        public int Fire(int s)
+        public int Fire( int numberBulletsin)
         {
-            while (NumberBulletsin >= 0)
+            while (NumberBulletsin <= 0)
             {
                 int cont;
-                if (n=0)
+                if (numberBulletsin == 0)
                 {
-                    cont= s;
+                    cont= SecondsCombing;
                 }
 
             }
-            retur 0;
+            return 0;
 
         }
-        public int GetRemainBulletCount(int m)
+        public void GetRemainBulletCount()
         {
-            int k = 0;
+            
             if (NumberBulletsin < BulledCapacity)
             {
-                BulledCapacity = NumberBulletsin + k;
+                Console.WriteLine(BulledCapacity- NumberBulletsin);
+                
             }
-            return k;
+            else 
+            {
+                Console.WriteLine("The comb is full");
+            }
+            
         }
-        public void Reload(string main)
+        public void Reload()
         {
             if(NumberBulletsin< BulledCapacity)
             {
-                int k = 0;
-                BulledCapacity = NumberBulletsin + k;
+
+                NumberBulletsin = BulledCapacity;
+                Console.WriteLine("The comb is filled");
             }
+            
             else
             {
-                BulledCapacity = NumberBulletsin;
+                Console.WriteLine("The comb is filled");
             }
-            Console.WriteLine("Darag dolduruldu");
-        }
-        public void ChangeFireMode(string mode)
-        {
-
-        }
-        public void ChangeFireMode(string main)
-        {
             
         }
-        
+        public void ChangeFireMode()
+        {
+            if (AtisMode == "true")
+            {
+                Console.WriteLine("Shooting mode is single");
+            }
+            else if(AtisMode=="false")
+            {
+                Console.WriteLine("Shooting mode is automatic");
+            }
+        }
+       
     }
 }
